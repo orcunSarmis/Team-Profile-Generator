@@ -1,20 +1,24 @@
-const Employee = require('../lib/Employee');
-const employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+class Employee {
+    constructor(name, id, email, ) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+    getName() {
+        return this.name;
+    }
 
-TextDecoderStream('Can instantiate Employee instance', () => {
-    expect(employee.name).toBe('Orcun');
-    expect(employee.id).toBe('01');
-    expect(employee.email).toBe('orcun@gmail.com');
-});
+    getId() {
+        return this.id;
+    }
 
-test('Can set name via getName() method', () => {
-    expect(employee.getName()).tobe('Orcun');
-});
+    getEmail() {
+        return this.email;
+    }
 
-test('Can set id via getId() method', () => {
-    expect(employee.geId()).tobe('01');
-});
+    getRole() {
+        return "Employee";
+    }
+}
 
-test('Can set id via getId() method', () => {
-    expect(employee.geId()).tobe('01');
-});
+module.export = Employee;
