@@ -1,3 +1,4 @@
+// Employee parent class
 class Employee {
     constructor(name, id, email, ) {
         this.name = name;
@@ -20,5 +21,5 @@ class Employee {
         return "Employee";
     }
 }
-
-module.export = Employee;
+// Exporting Employee class
+module.exports = Employee;

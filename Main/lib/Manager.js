@@ -1,3 +1,4 @@
+// This code includes Employee
 const Employee = require('./Employee');
 
 class Manager extends Employee {
@@ -14,5 +15,5 @@ class Manager extends Employee {
         return"Manager";
     }
 }
-
-module.export = Manager;
+// Exporting Manager class
+module.exports = Manager;

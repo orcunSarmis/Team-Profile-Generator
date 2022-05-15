@@ -1,24 +1,30 @@
+// This code includes Employee class
 const Employee = require('../lib/Employee');
-const employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+// const _employee = new Employee('Orcun', '01', 'orcun@gmail.com');
 
-TextDecoderStream('Can instantiate Employee instance', () => {
-    expect(employee.name).toBe('Orcun');
-    expect(employee.id).toBe('01');
-    expect(employee.email).toBe('orcun@gmail.com');
+test('Can instantiate _employee instance', () => {
+    const _employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+    expect(_employee.name).toBe('Orcun');
+    expect(_employee.id).toBe('01');
+    expect(_employee.email).toBe('orcun@gmail.com');
 });
-
-test('Can set name via getName() method', () => {
-    expect(employee.getName()).toBe('Orcun');
+// getName method test
+test('Can get name via getName() method', () => {
+    const _employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+    expect(_employee.getName()).toBe('Orcun');
 });
-
-test('Can set id via getId() method', () => {
-    expect(employee.geId()).toBe('01');
+// getId method test
+test('Can get id via getId() method', () => {
+    const _employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+    expect(_employee.getId()).toBe('01');
 });
-
-test('Can set id via getEmail() method', () => {
-    expect(employee.geEmail()).toBe('01');
+// getEmail method test
+test('Can get email via getEmail() method', () => {
+    const _employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+    expect(_employee.getEmail()).toBe('orcun@gmail.com');
 });
-
+// getRole method test
 test('Can get Employee via getRole() method', () => {
-    expect(manager.getRole()).toBe('Employee');
+    const _employee = new Employee('Orcun', '01', 'orcun@gmail.com');
+    expect(_employee.getRole()).toBe('Employee');
 });
