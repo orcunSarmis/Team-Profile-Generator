@@ -5,7 +5,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 // 
-const page-template.js = require('./src/page-template');
+const pageTemplate = require('./src/page-template');
 // code include File System
 const fs = require("fs");
 const path = require("path");
@@ -24,7 +24,7 @@ const propmtManager = () => {
                 if(nameInput) {
                     return true;
                 }else {
-                    console.log('Please enter your name!');
+                    console.log('Please enter manager’s name!');
                     return false;
                 }
             }
@@ -37,7 +37,7 @@ const propmtManager = () => {
                 if (employeeId) {
                     return true;
                 }else {
-                    console.log('Please enter your employee ID!');
+                    console.log('Please enter your manager’s ID!');
                     return false;
                 }
             }
@@ -50,7 +50,7 @@ const propmtManager = () => {
                 if (email) {
                     return true;
                 }else {
-                    console.log('Please enter your email address!');
+                    console.log('Please enter manager’s email address!');
                     return false;
                 }
             }
@@ -63,7 +63,7 @@ const propmtManager = () => {
                 if (officeNumber) {
                     return true;
                 }else {
-                    console.log('Please enter your office number!');
+                    console.log('Please enter manager’s office number!');
                     return false;
                 }
             }
@@ -79,7 +79,39 @@ const propmtManager = () => {
 const promptMenu = () => {
     return inquirer.prompt([
         {
-            
+            type: 'list',
+            name: 'menu',
+            message: 'Which type of team member would you like to add?',
+            choices: ['Engineer', 'Intern', 'I don’t want to add any more team members']
+        }
+    ]).then(userChoice => {
+        switch (userChoice.menu) {
+            case "Engineer":
+                propmtEngineer();
+                break;
+            case "Intern":
+                propmtIntern();
+                break;
+            default:
+                buildTeam();
+        }
+    });
+};
+
+const propmtEngineer = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your team engineer’s name?',
+            validate: engineerName => {
+                if(engineerName) {
+                    return true;
+                }else {
+                    console.log('Please enter engineer’s name!');
+                    return false;
+                }
+            }
         }
     ])
 }
