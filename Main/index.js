@@ -97,7 +97,7 @@ const promptMenu = () => {
         }
     });
 };
-
+// Questions for add an engineer
 const propmtEngineer = () => {
     return inquirer.prompt([
         {
@@ -112,6 +112,122 @@ const propmtEngineer = () => {
                     return false;
                 }
             }
+        },
+        {
+            type:'input',
+            name: 'employeeId',
+            message: 'What is your team engineer’s id?',
+            validate: employeeId => {
+                if (employeeId) {
+                    return true;
+                }else {
+                    console.log('Please enter your engineer’s ID!');
+                    return false;
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'email',
+            message: 'What is your team engineer’s email?', 
+            validate: email => {
+                if (email) {
+                    return true;
+                }else {
+                    console.log('Please enter engineer’s email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'gitHub',
+            message: 'What is your team engineer’s GitHub username?', 
+            validate: gitHub => {
+                if (gitHub) {
+                    return true;
+                }else {
+                    console.log('Please enter engineer’s GitHub username!');
+                    return false;
+                }
+            }
         }
-    ])
+    ]).then(answers => {
+        console.log(answers);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.gitHub);
+        teamMembers.push(engineer);
+        promptMenu();
+    })
+};
+// Questions for add Intern
+const propmtIntern = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your team intern’s name?',
+            validate: internName => {
+                if(internName) {
+                    return true;
+                }else {
+                    console.log('Please enter intern’s name!');
+                    return false;
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'employeeId',
+            message: 'What is your team intern’s id?',
+            validate: employeeId => {
+                if (employeeId) {
+                    return true;
+                }else {
+                    console.log('Please enter your intern’s ID!');
+                    return false;
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'email',
+            message: 'What is your team intern’s email?', 
+            validate: email => {
+                if (email) {
+                    return true;
+                }else {
+                    console.log('Please enter intern’s email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type:'input',
+            name: 'school',
+            message: 'What is your team intern’s school name?', 
+            validate: school => {
+                if (school) {
+                    return true;
+                }else {
+                    console.log('Please enter intern’s school name!');
+                    return false;
+                }
+            }
+        }
+    ]).then(answer => {
+        console.log(answer);
+        const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.school);
+        teamMembers.push(intern);
+        promptMenu();
+    })
+};
+// these code will build the team
+const buildTeam = () => {
+// add the output directory
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, pageTemplate(teamMembers), "utf-8");
 }
+
+propmtManager();
