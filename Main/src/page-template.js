@@ -1,7 +1,7 @@
 const generateTeam = (team) => {
     console.log(team);
     // this code creates empty array for push html elemnts
-    constheml = [];
+    const html = [];
     // Add functions for each team member return to HTML data
     const generateManager = manager => {
         console.log(manager);
@@ -73,20 +73,21 @@ module.exports = team => {
     return `
     <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Main/dist/style.css">
-    <title>Team Profile Generator</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Main/dist/style.css">
+        <title>Team Profile Generator</title>
+    </head>
 <body>
     <header>
         <h1>Developer Team</h1>
     </header>
 
     <main>${generateTeam(team)}</main>
-    
+    <script src="./Main/index.js"></script>
+    <script src="./Main/src/page-template.js"></script>
 </body>
 </html>
     `
