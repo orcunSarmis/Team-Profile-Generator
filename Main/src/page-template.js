@@ -12,7 +12,7 @@ const generateTeam = (team) => {
             <i class="fas fa-mug-hot"></i>Manager</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${manager.id}</li>
-                    <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.email}</a></span></li>
+                    <li class="list-group-item">Email: <span id="email"><a href="emailto:${manager.email}></a></span></li>
                     <li class="list-group-item"> Office Number: ${manager.officeNumber}</li>
                 </ul>
         </div>
@@ -28,7 +28,7 @@ const generateTeam = (team) => {
             <i class="fas fa-glasses"></i>Engineer</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${engineer.id}</li>
-                    <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}</a></span></li>
+                    <li class="list-group-item">Email: <span id="email"><a href="emailto:${engineer.email}></a></span></li>
                     <li class="list-group-item">GitHub Username: <a target="_blank" href="https://github.com/${engineer.gitHub}">${engineer.gitHub}</a></li>
                 </ul>
         </div>
@@ -44,7 +44,7 @@ const generateTeam = (team) => {
             <i class="fas fa-graduate"></i>Intern</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${intern.id}</li>
-                    <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}</a></span></li>
+                    <li class="list-group-item">Email: <span id="email"><a href="emailto:${intern.email}></a></span></li>
                     <li class="list-group-item">School: ${intern.school}</li>
                 </ul>
         </div>
@@ -53,7 +53,7 @@ const generateTeam = (team) => {
     }
 
     // for loop for team members
-    for (let i = 0; i < team.lenght; i++) {
+    for (let i = 0; i < team.length; i++) {
         if (team[i].getRole() === "Manager") {
             generateManager(team[i]);
         }
@@ -77,7 +77,7 @@ module.exports = team => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./Main/dist/style.css">
+        <link rel="stylesheet" href="../dist/style.css">
         <title>Team Profile Generator</title>
     </head>
 <body>
@@ -86,8 +86,9 @@ module.exports = team => {
     </header>
 
     <main>${generateTeam(team)}</main>
-    <script src="./Main/index.js"></script>
-    <script src="./Main/src/page-template.js"></script>
+    
+   
+    
 </body>
 </html>
     `
