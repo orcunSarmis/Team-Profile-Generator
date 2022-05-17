@@ -20,52 +20,54 @@ const propmtManager = () => {
             type: 'input',
             name: 'name',
             message: 'What is your team manager’s name?',
-            validate: nameInput => {
-                if(nameInput) {
+            validate: answer => {
+                if(answer !== "") {
                     return true;
-                }else {
-                    console.log('Please enter manager’s name!');
-                    return false;
-                }
+                }             
+                    return 'Please enter at least one character!';              
             }
         },
         {
             type:'input',
             name: 'employeeId',
             message: 'What is your team manager’s id?',
-            validate: employeeId => {
-                if (employeeId) {
+            validate: answer => {
+                const pass = answer.match(
+                    `/^[1-9]\d*$/`
+                );
+                if (pass) {
                     return true;
-                }else {
-                    console.log('Please enter your manager’s ID!');
-                    return false;
-                }
+                }        
+                    return "Please enter a postive number greater than zero.";             
             }
         },
         {
             type:'input',
             name: 'email',
             message: 'What is your team manager’s email?', 
-            validate: email => {
-                if (email) {
+            validate: answer => {
+                const pass = answer.match(
+                    `/\S+@\S+\.\S+/`
+                  );
+                  if (pass) {
                     return true;
-                }else {
-                    console.log('Please enter manager’s email address!');
-                    return false;
+                  }
+                  return "Please enter a valid email address.";
                 }
-            }
+            
         },
         {
             type:'input',
             name: 'officeNumber',
             message: 'What is your team manager’s office number?', 
-            validate: officeNumber => {
-                if (officeNumber) {
+            validate: answer => {
+                const pass = answer.match(
+                    `/^[1-9]\d*$/`
+                );
+                if (pass) {
                     return true;
-                }else {
-                    console.log('Please enter manager’s office number!');
-                    return false;
-                }
+                }        
+                    return "Please enter a postive number greater than zero.";             
             }
         },
     ]).then(answers => {
