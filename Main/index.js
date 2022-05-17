@@ -231,5 +231,3 @@ const buildTeam = () => {
 }
 
 propmtManager();
-propmtEngineer();
-propmtIntern();
