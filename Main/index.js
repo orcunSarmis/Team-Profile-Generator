@@ -31,43 +31,39 @@ const propmtManager = () => {
             type:'input',
             name: 'employeeId',
             message: 'What is your team manager’s id?',
-            validate: answer => {
-                const pass = answer.match(
-                    `/^[1-9]\d*$/`
-                );
-                if (pass) {
+            validate: employeeId => {
+                if (employeeId) {
                     return true;
-                }        
-                    return "Please enter a postive number greater than zero.";             
+                }else {
+                    console.log('Please enter your engineer’s ID!');
+                    return false;
+                }
             }
         },
         {
             type:'input',
             name: 'email',
             message: 'What is your team manager’s email?', 
-            validate: answer => {
-                const pass = answer.match(
-                    `/\S+@\S+\.\S+/`
-                  );
-                  if (pass) {
+            validate: email => {
+                if (email) {
                     return true;
-                  }
-                  return "Please enter a valid email address.";
+                }else {
+                    console.log('Please enter manager’s email address!');
+                    return false;
                 }
-            
+            }
         },
         {
             type:'input',
             name: 'officeNumber',
             message: 'What is your team manager’s office number?', 
-            validate: answer => {
-                const pass = answer.match(
-                    `/^[1-9]\d*$/`
-                );
-                if (pass) {
+            validate: officeNumber => {
+                if (officeNumber) {
                     return true;
-                }        
-                    return "Please enter a postive number greater than zero.";             
+                }else {
+                    console.log('Please enter manager’s office number!');
+                    return false;
+                }
             }
         },
     ]).then(answers => {
