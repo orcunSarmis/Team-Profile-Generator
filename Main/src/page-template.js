@@ -12,7 +12,7 @@ const generateTeam = (team) => {
             <i class="fas fa-mug-hot"></i>Manager</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${manager.id}</li>
-                    <li class="list-group-item">Email: <span id="email"><a href="emailto:${manager.email}></a></span></li>
+                    <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.email}">${manager.email}</a></span></li>
                     <li class="list-group-item"> Office Number: ${manager.officeNumber}</li>
                 </ul>
         </div>
@@ -28,7 +28,7 @@ const generateTeam = (team) => {
             <i class="fas fa-glasses"></i>Engineer</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${engineer.id}</li>
-                    <li class="list-group-item">Email: <span id="email"><a href="emailto:${engineer.email}></a></span></li>
+                    <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
                     <li class="list-group-item">GitHub Username: <a target="_blank" href="https://github.com/${engineer.gitHub}">${engineer.gitHub}</a></li>
                 </ul>
         </div>
@@ -41,10 +41,10 @@ const generateTeam = (team) => {
         <div class="card" style="width: 18rem;">
             <div class="card-header">
             ${intern.name} <br/>
-            <i class="fas fa-graduate"></i>Intern</div>
+            <i class="fas fa-user-graduate"></i>Intern</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${intern.id}</li>
-                    <li class="list-group-item">Email: <span id="email"><a href="emailto:${intern.email}></a></span></li>
+                    <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
                     <li class="list-group-item">School: ${intern.school}</li>
                 </ul>
         </div>
@@ -58,10 +58,10 @@ const generateTeam = (team) => {
             generateManager(team[i]);
         }
         if (team[i].getRole() === "Engineer") {
-            generateManager(team[i]);
+            generateEngineer(team[i]);
         }
         if (team[i].getRole() === "Intern") {
-            generateManager(team[i]);
+            generateIntern(team[i]);
         }
     }
     // add html
@@ -77,6 +77,9 @@ module.exports = team => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+          <script src="https://kit.fontawesome.com/4b75ce5a15.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../dist/style.css">
         <title>Team Profile Generator</title>
     </head>
