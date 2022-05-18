@@ -9,7 +9,7 @@ const pageTemplate = require('./src/page-template');
 // code include File System
 const fs = require("fs");
 const path = require("path");
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
 // output creates html
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const teamMembers = [];
