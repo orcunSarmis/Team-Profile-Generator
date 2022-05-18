@@ -5,6 +5,7 @@
   ## Description 
   
   This application allows managers to create profiles for their team members in order to quickly access essential information such as their email addresses or GitHub profiles. 
+  
 ![team0html](https://user-images.githubusercontent.com/79064464/169015306-e900de44-ee3a-4025-aa29-edba4021a2fa.png)
 
 Team members details netring in terminal.
