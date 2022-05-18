@@ -24,6 +24,8 @@ Team members details entring via node.js terminal.
   ## Usage
 
   Clone the repo first and run the following command at the root of your project: npm i
+  
+  https://github.com/orcunSarmis/Team-Profile-Generator
 
   ## Contributing
 
