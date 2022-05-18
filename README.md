@@ -41,8 +41,9 @@ Team members details entring via node.js terminal.
   ```
   npm test
   ```
+  ![Test0](https://user-images.githubusercontent.com/79064464/169012512-f2a79a50-b9d8-457d-96f2-1e8fdefdecfa.png)
+  
   ## License
-![Test0](https://user-images.githubusercontent.com/79064464/169012512-f2a79a50-b9d8-457d-96f2-1e8fdefdecfa.png)
 
    This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. 
 
