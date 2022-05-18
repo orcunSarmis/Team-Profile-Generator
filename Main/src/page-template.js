@@ -88,7 +88,7 @@ module.exports = team => {
         <h1>Developer Team</h1>
     </header>
 
-    <main>${generateTeam(team)}</main>
+    <main class='d-flex justify-content-center'>${generateTeam(team)}</main>
     
    
     
