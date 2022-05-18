@@ -6,9 +6,9 @@
   
   This application allows managers to create profiles for their team members in order to quickly access essential information such as their email addresses or GitHub profiles. 
   
-![team0html](https://user-images.githubusercontent.com/79064464/169015306-e900de44-ee3a-4025-aa29-edba4021a2fa.png)
+![Test01](https://user-images.githubusercontent.com/79064464/169027296-62c2da7e-6cc1-4197-9b18-fca244c3408f.png)
 
-Team members details netring in terminal.
+Team members details entring via node.js terminal.
 
 ![team0](https://user-images.githubusercontent.com/79064464/169015350-93a75574-db30-47de-8e89-dcfa9265c589.png)
 
